@@ -1,6 +1,6 @@
 {
   "name": "SSKinopoisk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Watch movies for free",
   "manifest_version": 2,
   "background": {
