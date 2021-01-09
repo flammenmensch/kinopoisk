@@ -12,10 +12,10 @@ jobs:
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
-          filename: 'release-{{ github.event.release.tag_name }}.zip'
+          filename: 'release-${{ github.event.release.tag_name }}.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
       - name: Upload Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "release-{{ github.event.release.tag_name }}.zip"
+          artifacts: "release-${{ github.event.release.tag_name }}.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
