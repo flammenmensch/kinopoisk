@@ -2,10 +2,9 @@
   "name": "SSKinopoisk",
   "version": "1.0.3",
   "description": "Watch movies for free",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
@@ -13,12 +12,18 @@
         "https://*.kinopoisk.ru/film/*",
         "https://*.kinopoisk.ru/series/*"
       ],
-      "js": ["contentScript.js"],
+      "js": [
+        "contentScript.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
       "run_at": "document_end"
     }
   ],
   "host_permissions": [
-    "https://*.ggkinopoisk.ru/"
+    "https://*.ggkinopoisk.ru/",
+    "https://ww1.flink.su/*"
   ],
   "permissions": [
     "tabs"
